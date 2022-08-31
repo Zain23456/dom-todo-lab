@@ -5,7 +5,8 @@ let resetBtn = document.getElementById('reset-button')
 
 
 btn.addEventListener('click', addList) 
-//resetBtn.addEventListener('click', removeElem)
+resetBtn.addEventListener('click', reload)
+ulElem.addEventListener('click', removeListItem)
 
 function addList(e) {
   let liElem = document.createElement('li')
@@ -19,12 +20,18 @@ function addList(e) {
   inputElem.value = ''
 }
 
-// function removeElem() {
-//   ulElem.removeChild('li')
-// }
+function reload() {
+  //ulElem.innerHTML = ''
+  location.reload()
+}
+
+function removeListItem(e) {
+  e.target.remove()
+}
 
 //// If input field is empty don't appendChild
-//* Add reset button that removes all list items from ul
-//* When item is clicked remove it from the list use existing CER
-//* Center all elements on the page by linking css file
+//// Add reset button that removes all list items from ul
+//// When item is clicked remove it from the list use existing CER
+//* Center all elements on the page
+////linking css file
 //* add a form and submit feature to web app
