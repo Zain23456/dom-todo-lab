@@ -1,10 +1,13 @@
 let inputElem = document.querySelector('#input')
 let btn = document.querySelector('#submit-button')
 let ulElem = document.querySelector('#todo-list')
-let resetBtn = document.getElementById('rest-button')
+let resetBtn = document.getElementById('reset-button')
 
 
-btn.addEventListener('click', (e) => {
+btn.addEventListener('click', addList) 
+//resetBtn.addEventListener('click', removeElem)
+
+function addList(e) {
   let liElem = document.createElement('li')
   liElem.textContent = inputElem.value
   
@@ -14,11 +17,11 @@ btn.addEventListener('click', (e) => {
     ulElem.appendChild(liElem)
   }
   inputElem.value = ''
-})
+}
 
-resetBtn.addEventListener('click', (e) => {
-  
-})
+// function removeElem() {
+//   ulElem.removeChild('li')
+// }
 
 //// If input field is empty don't appendChild
 //* Add reset button that removes all list items from ul
